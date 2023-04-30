@@ -1,0 +1,22 @@
+{
+  "name": "slidev-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.mjs,.cjs --fix",
+    "test": "echo \"No test needed!\"",
+    "build": "slidev build",
+    "dev": "slidev --remote",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.40.14",
+    "@slidev/theme-default": "*",
+    "@slidev/theme-seriph": "*",
+    "turbo": "^1.8.3"
+  },
+  "devDependencies": {
+    "@platypus-stack/eslint-config": "^1.0.2",
+    "eslint": "^8.34.0"
+  }
+}

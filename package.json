@@ -1,0 +1,16 @@
+{
+    "name": "@platypus-stack/slidev-template",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "dependencies": {
+      "@platypus-stack/platypus-infra-tools": "1.0.3",
+      "@platypus-stack/platypus-app-tools": "1.0.1",
+      "@platypus-stack/prettier-config": "1.0.0",
+      "commander": "^8.2",
+      "shelljs": "^0.8"
+    },
+    "devDependencies": {
+      "prettier": "^2"
+    }
+  }

@@ -1,0 +1,23 @@
+version: '3.9'
+
+networks:
+  default:
+    external: true
+    name: ${DOCKER_NETWORK}
+
+services:
+  slidev:
+    image: eldy/node:18-alpine3.17
+    container_name: '${APP_ID}-slidev'
+    volumes:
+      - ./application:/var/www/html
+    networks:
+      - default
+    entrypoint: 'pnpm turbo dev'
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=${DOCKER_NETWORK}'
+      - 'traefik.http.routers.${APP_ID}-slidev.rule=Host(`${APP_HOST}`)'
+      - 'traefik.http.routers.${APP_ID}-slidev.entrypoints=https'
+      - 'traefik.http.routers.${APP_ID}-slidev.tls=true'
+      - 'traefik.http.services.${APP_ID}-slidev.loadbalancer.server.port=3030'
