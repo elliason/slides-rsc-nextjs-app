@@ -20,4 +20,5 @@ services:
       - 'traefik.http.routers.${APP_ID}-slidev.rule=Host(`${APP_HOST}`)'
       - 'traefik.http.routers.${APP_ID}-slidev.entrypoints=https'
       - 'traefik.http.routers.${APP_ID}-slidev.tls=true'
+      - 'traefik.http.routers.${APP_ID}-slidev.tls.certresolver=default'
       - 'traefik.http.services.${APP_ID}-slidev.loadbalancer.server.port=3030'
