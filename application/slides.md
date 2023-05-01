@@ -34,3 +34,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ---
 src: ./slides/slides-rsc.md
 ---
+
+---
+src: ./slides/slides-next.md
+---

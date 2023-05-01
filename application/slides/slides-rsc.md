@@ -152,19 +152,18 @@ class: 'text-xs'
 - SSR komponenty stále musí posílat na klienta JS, který je potřeba spustit a znovu vykreslit (hydratace).
 
 ---
-layout: two-cols
----
 
 # SSR (next.js implementace)
 
 1) Na úrovni stránky (getServerSideProps / getStaticProps) se načtou data ze serveru.
 2) Na serveru se vyrenderuje HTML.
 3) HTML se odešle klientovi i s celým JS bundlem + json s počátečním stavem.
-4) Klient spustí JS, který znovu vyrenderuje stránku (hydratace).
+4) Na klientu je zobrazena statická neinteraktivní stránka.
+4) spustí se JS, který znovu vyrenderuje stránku (hydratace).
 5) Stránka je interaktivní.
 ![Local Image](/images/ssr-chart.png)
 
-::right::
+---
 
 # RSC
 
@@ -177,8 +176,21 @@ layout: two-cols
 
 ---
 
+<img src="/images/ssr-chart.webp" />
+
+---
+
+<img src="/images/server-rendering-with-streaming-chart.webp" />
+
+<!--
+SSR - kroky jsou sekvenční a blokující - nejdříve je potřeba dokončit jeden pro pokračování
+RSC - můžeme renderovat komponenty postupně a streamovat je na klienta. Není třeba čekat na pomalé komponenty.
+
+Zlepšujeme tím Time to first byte (TTFB), First Contentful Paint (FCP) a Time to Interactive (TTI).
+-->
+
+---
+
 # RSC a SSR jsou komplementární
 
 - klientské komponenty v next.js jsou předrenderované pomocí SSR
-
----
