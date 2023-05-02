@@ -25,7 +25,7 @@
 
 ---
 
-# serverové kmponenty závisí na datech, klientké komponenty na stavu
+# serverové komponenty závisí na datech, klientké komponenty na stavu
 
 - Serverový kód je typicky bezstavový.
 - Hooky jsou stavové, řeší především stav a efekty.
